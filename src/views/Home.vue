@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import SideMenu from "../components/SideMenu/SideMenu";
-import MainContainer from "../components/MainContainer";
+import SideMenu from "../components/SideMenu/index";
+import MainContainer from "../components/MainSection/index";
 
 export default {
   name: "home",

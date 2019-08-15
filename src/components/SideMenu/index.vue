@@ -5,21 +5,23 @@
 
       <!-- side menu -->
       <v-layout column class="side-menu">
-        <!-- section 1 -->
-        <flex>
-          <v-btn outline>Memembership</v-btn>
-        </flex>
+        <div class="side-menu-groups">
+          <!-- section 1 -->
+          <div>
+            <v-btn outline>Memembership</v-btn>
+          </div>
 
-        <!-- section 2 -->
-        <menu-list-group :listData="browseMusic" title="Browse Music" />
-        <v-divider></v-divider>
+          <!-- section 2 -->
+          <menu-list-group :listData="browseMusic" title="Browse Music" />
+          <v-divider></v-divider>
 
-        <!-- section 3 -->
-        <menu-list-group :listData="yourMusic" title="Your Music" />
-        <v-divider></v-divider>
+          <!-- section 3 -->
+          <menu-list-group :listData="yourMusic" title="Your Music" />
+          <v-divider></v-divider>
 
-        <!-- section 4 -->
-        <menu-list-group :listData="yourPlaylist" title="Your Playlist" />
+          <!-- section 4 -->
+          <menu-list-group :listData="yourPlaylist" title="Your Playlist" />
+        </div>
       </v-layout>
     </v-layout>
   </v-layout>
@@ -92,11 +94,27 @@ export default {
   min-width: 200px;
 
   .side-menu {
-    background-color: rgba(0, 0, 0, 0.7);
-    /* filter: blur(5px); */
-    min-height: 100%;
-    /* width: 50%; */
-    // filter: blur(10px);
+    // background-color: rgba(0, 0, 0, 0.7);
+    // min-height: 100%;
+    position: relative;
+    background: inherit;
+    border-radius: 2px;
+    overflow: hidden;
+
+    &:after {
+      content: "";
+      background: inherit;
+      position: absolute;
+      left: -25px;
+      right: 0;
+      top: -25px;
+      bottom: 0;
+      box-shadow: inset 0 0 0 200px rgba(0, 30, 36, 0.45);
+      filter: blur(5px);
+    }
+    .side-menu-groups {
+      z-index: 5;
+    }
   }
 }
 .outer-space {
