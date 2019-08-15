@@ -3,48 +3,62 @@
     <v-layout align-center fill-height>
       <v-layout column class="main-menu white--text">
         <v-layout column class="cover-section">
-          <v-layout class="cover-top-menu mt-4">
-            <v-text-field
-              dark
-              solo
-              clearable
-              label="Search"
-              prepend-inner-icon="mdi-magnify"
-              append-icon="mdi-microphone"
-              background-color="rgba(255, 255, 255, 0.1)"
-              class="ml-5"
-            ></v-text-field>
-            <v-spacer></v-spacer>
+          <v-layout class="cover-top-menu mt-4" row>
+            <v-flex xs6>
+              <v-text-field
+                dark
+                solo
+                clearable
+                label="Search"
+                prepend-inner-icon="mdi-magnify"
+                append-icon="mdi-microphone"
+                background-color="rgba(255, 255, 255, 0.1)"
+                class="ml-5"
+              ></v-text-field>
+            </v-flex>
+            <v-flex xs4></v-flex>
+            <v-flex xs2>
+              <v-spacer></v-spacer>
 
-            <v-badge overlap class="mt-3">
-              <template v-slot:badge>
-                <span>2</span>
-              </template>
-              <v-icon dark>mdi-bell</v-icon>
-            </v-badge>
+              <v-badge overlap class="mt-3">
+                <template v-slot:badge>
+                  <span>2</span>
+                </template>
+                <v-icon dark>mdi-bell</v-icon>
+              </v-badge>
 
-            <v-badge overlap class="mx-4">
-              <!-- <template v-slot:badge>
+              <v-badge overlap class="mx-4">
+                <!-- <template v-slot:badge>
                   <span>3</span>
-              </template>-->
-              <v-avatar>
-                <img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John" />
-              </v-avatar>
-            </v-badge>
+                </template>-->
+                <v-avatar>
+                  <img src="https://cdn.vuetifyjs.com/images/john.jpg" alt="John" />
+                </v-avatar>
+              </v-badge>
+            </v-flex>
           </v-layout>
-          <v-flex>
-            <div class="display-1">What's hot this weekend?</div>
-            <div
-              class="caption"
-            >Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus eius quidem doloremque qui voluptatum minima impedit tempore explicabo a! Eum non et quo ullam facere in saepe necessitatibus ad repellendus?</div>
-            <v-btn round color="primary" dark>Rounded Button</v-btn>
-            <v-btn color="warning" fab dark>
-              <v-icon>mdi-play</v-icon>
-            </v-btn>
-            <v-btn color="warning" fab dark>
-              <v-icon>mdi-bookmark-outline</v-icon>
-            </v-btn>
-          </v-flex>
+          <v-layout column>
+            <v-layout row>
+              <v-flex xs4>
+                <div class="display-1 font-weight-bold">What's hot this weekend?</div>
+                <div
+                  class="caption font-weight-light mt-2"
+                >Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus eius quidem doloremque qui voluptatum</div>
+              </v-flex>
+            </v-layout>
+            <v-layout row align-center>
+              <v-btn round color="light-blue darken-1" dark>
+                Listen
+                <v-btn color="white" fab dark small absolute class="listen-button">
+                  <v-icon color="light-blue darken-1">mdi-play</v-icon>
+                </v-btn>
+              </v-btn>
+
+              <v-btn color="light-blue darken-1" fab small dark>
+                <v-icon>mdi-bookmark-outline</v-icon>
+              </v-btn>
+            </v-layout>
+          </v-layout>
           <v-flex>
             <v-layout>
               <v-flex xs10 class="subheading">Noteworthy Albums</v-flex>
@@ -247,6 +261,9 @@ export default {
     }
   }
 }
+// .listen-button {
+//   left: -10px;
+// }
 .outer-space {
   width: 40px;
 }
